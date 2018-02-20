@@ -80,6 +80,6 @@ Issuer.discover('https://ulogin.cloud') // => Promise
 		res.send(req.user)
 	})
 
-	app.listen(9002)
+	app.listen(process.env.PORT || 9002)
 
 });

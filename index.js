@@ -36,14 +36,14 @@ passport.deserializeUser(function(id, cb) {
 
 const Issuer = require('openid-client').Issuer;
 
-Issuer.discover('https://us.ulogin.cloud') // => Promise
+Issuer.discover('https://ulogin.cloud') // => Promise
   .then(function (issuer) {
     console.log('Discovered issuer', issuer);
   
 	const client = new issuer.Client({
 	  client_id: 'foo',
 	  client_secret: 'bar',
-	  redirect_uris:['http://localhost:9002/auth/cb']
+	  redirect_uris:['https://test.ulogin.cloud/auth/cb']
 	}); // => Client
 	client.CLOCK_TOLERANCE = 60
 	const params = {
